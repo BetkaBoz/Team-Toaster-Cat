@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rgPlayer;
     public bool isGrounded = true;
-    public float speed = 1.0f;
-    public float jump = 3.0f;
+    private float speed = 3.0f;
+    public float defaultSpeed = 3.0f;
+    private float jump = 15.0f;
+    public float defaultJump = 15.0f;
 
     void Update()
     {
@@ -15,40 +17,50 @@ public class PlayerMovement : MonoBehaviour
         {
             rgPlayer.velocity = new Vector2(speed, 0.0f);
         }
-        
-        
-
+              
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     { 
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         switch (other.tag) { 
             case "jumpCollider": {
-                
-                isGrounded = false;
-                break;
+                    Debug.Log(speed + " " + jump);
+                    isGrounded = false;
+                    rgPlayer.velocity = new Vector2(speed*2f, jump);
+                    speed = defaultSpeed;
+                    jump = defaultJump;
+                    break;
             }
-        case "groundCollider":
+            case "groundCollider":
             {
-               isGrounded = true;
-               break;
+                    isGrounded = true;
+                    break;
             }
-        case "stickyCollider":
+            case "stickyCollider":
             {
-                break;
+                    isGrounded = true;
+                    speed = speed / 1.5f;
+                    jump = jump / 1.5f;
+                    break;
             }
             case "speedingCollider":
             {
-                break;
+                    isGrounded = true;
+                    speed = speed * 2f;
+                    break;
             }
             case "superJumpCollider":
             {
-                break;
+                    isGrounded = true;
+                    jump = jump * 1.5f;
+                    break;
             }
             case "deathCollider":
             {
-                break;
+                    isGrounded = true;
+                    speed = 0;
+                    break;
             }
 
         }
