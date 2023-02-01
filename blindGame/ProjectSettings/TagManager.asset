@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - groundCollider
+  - jumpCollider
+  - stickyCollider
+  - speedingCollider
+  - superJumpCollider
+  - deathCollider
   layers:
   - Default
   - TransparentFX
