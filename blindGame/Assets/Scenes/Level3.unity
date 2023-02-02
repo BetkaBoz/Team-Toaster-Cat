@@ -1057,6 +1057,7 @@ Transform:
   - {fileID: 119826677}
   - {fileID: 1545486892}
   - {fileID: 1158819732}
+  - {fileID: 615263477}
   m_Father: {fileID: 1115562960}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1721,6 +1722,73 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1001 &615263476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 397982399}
+    m_Modifications:
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344076423309567807, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+      propertyPath: m_Name
+      value: win
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+--- !u!4 &615263477 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8344076423309567806, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+  m_PrefabInstance: {fileID: 615263476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &615263478 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8344076423309567805, guid: 0d2e4099ad866904a8d82eb19430b885, type: 3}
+  m_PrefabInstance: {fileID: 615263476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &618799067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1800,7 +1868,7 @@ GameObject:
   - component: {fileID: 619414496}
   m_Layer: 0
   m_Name: Song1
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4797,6 +4865,7 @@ MonoBehaviour:
   dead: 0
   falling: {fileID: 421741887}
   death: {fileID: 1158819733}
+  win: {fileID: 615263478}
   jumpBasic: {fileID: 119826678}
   superJump: {fileID: 1545486893}
   gameManager: {fileID: 2011586025}
@@ -5929,6 +5998,12 @@ MonoBehaviour:
   nextResetButton: {fileID: 2263181196335379106}
   scoreBoard: {fileID: 2263181197466163769}
   isGameOver: 0
+  so:
+    highScore1: 0
+    highScore2: 0
+    highScore3: 0
+    highScore4: 0
+    highScore5: 0
 --- !u!4 &2011586026
 Transform:
   m_ObjectHideFlags: 0

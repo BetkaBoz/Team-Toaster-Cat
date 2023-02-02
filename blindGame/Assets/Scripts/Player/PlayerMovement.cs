@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Sounds")]
     public AudioSource falling;
     public AudioSource death;
+    public AudioSource win;
     public AudioSource jumpBasic;
     public AudioSource superJump;
     private bool jumpType = true; // true = basic
@@ -113,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             case "winCollider":
                 {
-                    death.Play();
+                    win.Play();
                     isGrounded = true;
                     dead = true;
                     speed = 0;
