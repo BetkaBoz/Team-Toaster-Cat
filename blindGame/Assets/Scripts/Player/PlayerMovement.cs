@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
                     dead = true;
                     speed = 0;
                     jump = 0;
-                    PlayerOb.GetComponent<CapsuleCollider2D>().enabled = false;
+                    //PlayerOb.GetComponent<CapsuleCollider2D>().enabled = false;
                     break;
             }
             case "voidCollider":
