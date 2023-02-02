@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6dd7b2d63bf51408d38c51457358d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerI: {fileID: 1671067972}
+  playerMovement: {fileID: 1671067972}
   player: {fileID: 1671067974}
   smoothTime: 0.075
   positionOffset: {x: 6, y: 0, z: -10}
@@ -4176,7 +4176,6 @@ MonoBehaviour:
   jumpBasic: {fileID: 119826678}
   superJump: {fileID: 1545486893}
   gameManager: {fileID: 2011586025}
-  mAnimator: {fileID: 1671067975}
 --- !u!212 &1671067973
 SpriteRenderer:
   m_ObjectHideFlags: 0

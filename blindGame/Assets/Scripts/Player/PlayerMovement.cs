@@ -25,11 +25,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Game Manager")]
     public GameManager gameManager;
 
+    [Header("Game Manager")]
+    public Animator mAnimator;
 
     void Update()
     {
         if (isGrounded)
         {
+            mAnimator.Play("Walking");
             rgPlayer.velocity = new Vector2(speed, 0.0f);
             RaycastHit2D hit = Physics2D.Raycast(PlayerOb.transform.position, Vector2.right, 2f, LayerMask.GetMask("Platform"));
             RaycastHit2D hit2 = Physics2D.Raycast(new Vector2(PlayerOb.transform.position.x, PlayerOb.transform.position.y - 0.25f), Vector2.right, 2f, LayerMask.GetMask("Platform"));
@@ -44,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jumping()
     {
+        mAnimator.Play("Jumping");
         if (jumpType) jumpBasic.Play();
         else superJump.Play();
         isGrounded = false;
@@ -89,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
             case "deathCollider":
             {
                     if (dead) break;
+                    mAnimator.Play("Death");
                     death.Play();
                     isGrounded = true;
                     dead = true;
@@ -101,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             case "voidCollider":
                 {
                     if (dead) break;
+                    mAnimator.Play("Death");
                     falling.Play();
                     dead = true;
                     speed = 0;
