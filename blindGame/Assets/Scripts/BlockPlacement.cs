@@ -17,7 +17,7 @@ public class BlockPlacement : MonoBehaviour
     public BoxCollider2D transparentBlockCollider;
     public BlockSpawner spawner;
     public Transform playerPos = null;
-    public int score = 10000;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -89,17 +89,9 @@ public class BlockPlacement : MonoBehaviour
                 Debug.Log("Block: " + currentBlock + " count: " + transparentBlocks[currentBlock].count);
                 if (transparentBlocks[currentBlock].count <= 0) return;
                 worldGrid.SetValue(GetMouseWorldPos(), 1);
-                if (score - transparentBlocks[currentBlock].pointCost <= 0)
-                {
-                    score = 0;
-                }
-                else
-                {
-                    score -= transparentBlocks[currentBlock].pointCost;
-                }
+                gameManager.SubstractScore(transparentBlocks[currentBlock].pointCost);
                 transparentBlocks[currentBlock].decreaseAmount();
                 spawner.SpawnObject(currentBlock, currentTransparentBlock.transform.position, currentTransparentBlock.transform.rotation);
-                Debug.Log("Score: " + score);
             }
         }
         if (Input.GetMouseButtonDown(1))

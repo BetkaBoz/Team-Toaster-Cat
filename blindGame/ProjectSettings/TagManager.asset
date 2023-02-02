@@ -11,6 +11,7 @@ TagManager:
   - superJumpCollider
   - deathCollider
   - voidCollider
+  - winCollider
   layers:
   - Default
   - TransparentFX

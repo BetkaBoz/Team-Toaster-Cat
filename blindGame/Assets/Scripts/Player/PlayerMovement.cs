@@ -22,7 +22,10 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource superJump;
     private bool jumpType = true; // true = basic
 
-    
+    [Header("Game Manager")]
+    public GameManager gameManager;
+
+
     void Update()
     {
         if (isGrounded)
@@ -80,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
                     dead = true;
                     speed = 0;
                     jump = 0;
+                    gameManager.GameOver(true);
                     //PlayerOb.GetComponent<CapsuleCollider2D>().enabled = false;
                     break;
             }
@@ -90,6 +94,17 @@ public class PlayerMovement : MonoBehaviour
                     speed = 0;
                     jump = 0;
                     rgPlayer.gravityScale = 0;
+                    gameManager.GameOver(true);
+                    break;
+                }
+            case "winCollider":
+                {
+                    death.Play();
+                    isGrounded = true;
+                    dead = true;
+                    speed = 0;
+                    jump = 0;
+                    gameManager.GameOver(false);
                     break;
                 }
         }
