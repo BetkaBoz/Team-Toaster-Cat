@@ -10,6 +10,7 @@ TagManager:
   - speedingCollider
   - superJumpCollider
   - deathCollider
+  - voidCollider
   layers:
   - Default
   - TransparentFX
