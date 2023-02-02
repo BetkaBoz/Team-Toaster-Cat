@@ -33,23 +33,23 @@ public class BlockPlacement : MonoBehaviour
         if (Input.anyKeyDown)
         {
             oldBlock = currentBlock;
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && transparentBlocks[0].count > 0)
                 currentBlock = 0;
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha2) && transparentBlocks[1].count > 0)
                 currentBlock = 1;
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (Input.GetKeyDown(KeyCode.Alpha3) && transparentBlocks[2].count > 0)
                 currentBlock = 2;
-            if (Input.GetKeyDown(KeyCode.Alpha4))
+            if (Input.GetKeyDown(KeyCode.Alpha4) && transparentBlocks[3].count > 0)
                 currentBlock = 3;
-            if (Input.GetKeyDown(KeyCode.Alpha5))
+            if (Input.GetKeyDown(KeyCode.Alpha5) && transparentBlocks[4].count > 0)
                 currentBlock = 4;
-            if (Input.GetKeyDown(KeyCode.Alpha6))
+            if (Input.GetKeyDown(KeyCode.Alpha6) && transparentBlocks[5].count > 0)
                 currentBlock = 5;
             ChangeCurrentBlock();
         }
             
 
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
         {
             oldBlock = currentBlock;
             if (currentBlock >= transparentBlocks.Count - 1)
@@ -60,10 +60,11 @@ public class BlockPlacement : MonoBehaviour
             {
                 currentBlock++;
             }
+            CheckScrollAvailability(true);
             ChangeCurrentBlock();
         }
 
-        if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
             oldBlock = currentBlock;
             if (currentBlock <= 0)
@@ -74,6 +75,7 @@ public class BlockPlacement : MonoBehaviour
             {
                 currentBlock--;
             }
+            CheckScrollAvailability(false);
             ChangeCurrentBlock();
         }
 
@@ -106,10 +108,68 @@ public class BlockPlacement : MonoBehaviour
         }
     }
 
+    private void CheckScrollAvailability(bool scrollUp)
+    {
+        if (transparentBlocks[currentBlock].count > 0)
+        {
+            Debug.Log(currentBlock);
+            return;
+        }
+        if (!scrollUp)
+        {
+            for(int x = currentBlock-1; x >= 0; x--)
+            {
+                Debug.Log(x);
+                if (transparentBlocks[x].count > 0)
+                {
+                    Debug.Log("goin up "+x);
+                    currentBlock = x;
+                    return;
+                }
+            }
+            for (int x = transparentBlocks.Count - 1; x > currentBlock; x--)
+            {
+                Debug.Log(x);
+                if (transparentBlocks[x].count > 0)
+                {
+                    Debug.Log("going upp "+x);
+                    currentBlock = x;
+                    return;
+                }
+            }
+        }
+        else
+        {
+            for (int x = currentBlock + 1; x <= transparentBlocks.Count - 1; x++)
+            {
+                Debug.Log(x);
+                if (transparentBlocks[x].count > 0)
+                {
+                    Debug.Log("going down "+x);
+                    currentBlock = x;
+                    return;
+                }
+            }
+            for (int x = 0; x < currentBlock; x++)
+            {
+                Debug.Log(x);
+                if (transparentBlocks[x].count > 0)
+                {
+                    Debug.Log("going downn "+x);
+                    currentBlock = x;
+                    return;
+                }
+            }
+        }
+        Debug.Log("END");
+    }
+
     private void ChangeCurrentBlock()
     {
         transparentBlocks[oldBlock].block.SetActive(false);
+        transparentBlocks[oldBlock].Selected(false);
         transparentBlocks[currentBlock].block.SetActive(true);
+        transparentBlocks[currentBlock].Selected(true);
         currentTransparentBlock = transparentBlocks[currentBlock].block;
         transparentBlockCollider = currentTransparentBlock.GetComponent<BoxCollider2D>();
     }

@@ -1323,11 +1323,11 @@ RectTransform:
   m_Children:
   - {fileID: 179703012}
   m_Father: {fileID: 1844233291}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -500}
+  m_AnchoredPosition: {x: -50, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665069877
@@ -1422,11 +1422,11 @@ RectTransform:
   m_Children:
   - {fileID: 895844372}
   m_Father: {fileID: 1844233291}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -100}
+  m_AnchoredPosition: {x: -50, y: -500}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &867481365
@@ -2890,9 +2890,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 867481364}
-  - {fileID: 1711047070}
   - {fileID: 665069876}
+  - {fileID: 1711047070}
+  - {fileID: 867481364}
   - {fileID: 446202829}
   m_Father: {fileID: 654187529}
   m_RootOrder: 0
@@ -3021,6 +3021,10 @@ PrefabInstance:
       propertyPath: block
       value: 
       objectReference: {fileID: 1162641793}
+    - target: {fileID: 3803446130223676974, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1711047071}
     - target: {fileID: 3803446130806861923, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
       propertyPath: m_Name
       value: TransparentObjects
@@ -3081,6 +3085,10 @@ PrefabInstance:
       propertyPath: block
       value: 
       objectReference: {fileID: 1850916692}
+    - target: {fileID: 3803446131054735771, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 446202830}
     - target: {fileID: 3803446131138540068, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
       propertyPath: text
       value: 
@@ -3089,6 +3097,10 @@ PrefabInstance:
       propertyPath: block
       value: 
       objectReference: {fileID: 1731321954}
+    - target: {fileID: 3803446131138540068, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 867481365}
     - target: {fileID: 3803446131777623988, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
       propertyPath: size
       value: 5
@@ -3101,6 +3113,10 @@ PrefabInstance:
       propertyPath: block
       value: 
       objectReference: {fileID: 1736516947}
+    - target: {fileID: 3803446131777623988, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 665069877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ef3d1b0c04d2884ab2b2e0f7d3cc41d, type: 3}
 --- !u!1001 &5524684991232621992
