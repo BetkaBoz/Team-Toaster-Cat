@@ -24,8 +24,12 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2853525644772607945, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853525644772607945, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 3363392833447772961, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_IsActive

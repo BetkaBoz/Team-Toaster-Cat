@@ -31,28 +31,38 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             rgPlayer.velocity = new Vector2(speed, 0.0f);
+            RaycastHit2D hit = Physics2D.Raycast(PlayerOb.transform.position, Vector2.right, 2f, LayerMask.GetMask("Platform"));
+            RaycastHit2D hit2 = Physics2D.Raycast(new Vector2(PlayerOb.transform.position.x, PlayerOb.transform.position.y - 0.25f), Vector2.right, 2f, LayerMask.GetMask("Platform"));
+            if (hit.collider != null || hit2.collider != null)
+            {
+                Jumping();
+            }
+
         }
-              
+
     }
-    
+
+    public void Jumping()
+    {
+        if (jumpType) jumpBasic.Play();
+        else superJump.Play();
+        isGrounded = false;
+        rgPlayer.velocity = new Vector2(speed * 2f, jump);
+        speed = defaultSpeed;
+        jump = defaultJump;
+        jumpType = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.tag) {
            
             case "jumpCollider": {
-                    Debug.Log("sda");
-                    if (jumpType)  jumpBasic.Play() ; 
-                    else superJump.Play();
-                    isGrounded = false;
-                    rgPlayer.velocity = new Vector2(speed*1.5f, jump);
-                    speed = defaultSpeed;
-                    jump = defaultJump;
-                    jumpType = true;
+                    Jumping();
                     break;
             }
             case "groundCollider":
             {
-                    Debug.Log("klasika");
                     isGrounded = true;
                     break;
             }
@@ -66,18 +76,19 @@ public class PlayerMovement : MonoBehaviour
             case "speedingCollider":
             {
                     isGrounded = true;
-                    speed = speed * 2f;
+                    speed = speed * 1.74f;
                     break;
             }
             case "superJumpCollider":
             {
                     jumpType = false; ;
                     isGrounded = true;
-                    jump = jump * 1.5f;
+                    jump = jump * 1.9f;
                     break;
             }
             case "deathCollider":
             {
+                    if (dead) break;
                     death.Play();
                     isGrounded = true;
                     dead = true;
@@ -89,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
             }
             case "voidCollider":
                 {
+                    if (dead) break;
                     falling.Play();
                     dead = true;
                     speed = 0;
