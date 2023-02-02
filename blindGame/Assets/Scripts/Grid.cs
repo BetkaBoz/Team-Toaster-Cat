@@ -45,12 +45,15 @@ public class Grid
         y = Mathf.FloorToInt((position - originPoint).y / cellSize);
     }
 
-    public Vector3 GetCellCenter(Vector3 position)
+    public Vector3 GetCellCenter(Vector3 position, int blockSize)
     {
         int x, y;
         GetXY(position, out x, out y);
         Vector3 returnVector = GetWorldPosition(x, y);
-        returnVector.x += cellSize / 2;
+        if ((blockSize % 2) == 0)
+        {
+            returnVector.x += cellSize / 2;
+        }
         returnVector.y += cellSize / 2;
         return returnVector;
     }
