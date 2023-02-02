@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            headerText.text = "Level " + levelNumber + ": Failure!";
+            headerText.text = "Level " + levelNumber + ": Successful!";
             scoreText.text = "Score: " + score;
             buttonText.text = "Next Level";
             nextResetButton.onClick.AddListener(() => LoadNextLevel());
