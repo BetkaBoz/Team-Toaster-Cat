@@ -68,15 +68,15 @@ public class GameManager : MonoBehaviour
         scoreBoard.SetActive(true);
         if (isDead)
         {
-            headerText.text += " " + levelNumber + ": Failure!";
-            scoreText.text += ": " + score;
+            headerText.text = "Level " + levelNumber + ": Failure!";
+            scoreText.text = "Score: " + score;
             buttonText.text = "Restart Level";
             nextResetButton.onClick.AddListener(()=>RestartLevel());
         }
         else
         {
-            headerText.text += " " + levelNumber + ": Success!";
-            scoreText.text += ": " + score;
+            headerText.text = "Level " + levelNumber + ": Failure!";
+            scoreText.text = "Score: " + score;
             buttonText.text = "Next Level";
             nextResetButton.onClick.AddListener(() => LoadNextLevel());
         }
