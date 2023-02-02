@@ -662,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1671067972}
   player: {fileID: 1671067974}
-  smoothTime: 0.05
+  smoothTime: 0.075
   positionOffset: {x: 0, y: 0, z: -10}
   xlimit: {x: -10, y: 1000}
   ylimit: {x: -3, y: 6}
