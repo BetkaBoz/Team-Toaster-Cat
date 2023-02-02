@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jumping()
     {
-        mAnimator.Play("Jumping");
         if (jumpType) jumpBasic.Play();
         else superJump.Play();
         isGrounded = false;
@@ -59,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        switch (other.tag) {
+        if (dead) return;
+            switch (other.tag) {
            
             case "jumpCollider": {
                     Jumping();
@@ -92,26 +92,22 @@ public class PlayerMovement : MonoBehaviour
             }
             case "deathCollider":
             {
-                    if (dead) break;
-                    mAnimator.Play("Death");
+                    mAnimator.enabled = false;
                     death.Play();
-                    isGrounded = true;
-                    dead = true;
+                    isGrounded = true; dead = true;
                     speed = 0;
                     jump = 0;
+                    rgPlayer.gravityScale = 20;
                     gameManager.GameOver(true);
                     //PlayerOb.GetComponent<CapsuleCollider2D>().enabled = false;
                     break;
             }
             case "voidCollider":
                 {
-                    if (dead) break;
-                    mAnimator.Play("Death");
                     falling.Play();
                     dead = true;
                     speed = 0;
                     jump = 0;
-                    rgPlayer.gravityScale = 0;
                     gameManager.GameOver(true);
                     break;
                 }
