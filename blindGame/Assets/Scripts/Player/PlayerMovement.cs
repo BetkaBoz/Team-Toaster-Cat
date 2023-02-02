@@ -31,10 +31,11 @@ public class PlayerMovement : MonoBehaviour
     }
     
     private void OnTriggerEnter2D(Collider2D other)
-    { 
-        //Debug.Log(other.tag);
-        switch (other.tag) { 
+    {
+        switch (other.tag) {
+           
             case "jumpCollider": {
+                    Debug.Log("sda");
                     if (jumpType)  jumpBasic.Play() ; 
                     else superJump.Play();
                     isGrounded = false;
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
             }
             case "groundCollider":
             {
+                    Debug.Log("klasika");
                     isGrounded = true;
                     break;
             }

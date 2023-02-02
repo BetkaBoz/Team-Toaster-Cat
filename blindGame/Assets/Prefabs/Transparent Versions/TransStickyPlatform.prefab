@@ -53,15 +53,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803513494859335862, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_Name
-      value: StickyPlatform Variant
+      value: TransStickyPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803513494859335862, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2803513495994358975, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2803513495994358975, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2803513496329928707, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803513496329928707, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe468332b704b3f44867a915c473111e, type: 3}

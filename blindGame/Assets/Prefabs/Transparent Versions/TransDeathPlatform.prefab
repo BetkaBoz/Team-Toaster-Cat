@@ -11,9 +11,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8527868905094552564, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8527868905274876049, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527868905274876049, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8527868905492659033, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
       propertyPath: m_RootOrder
@@ -61,7 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8527868905492659034, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
       propertyPath: m_Name
-      value: DeathPlatform
+      value: TransDeathPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527868905492659034, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}

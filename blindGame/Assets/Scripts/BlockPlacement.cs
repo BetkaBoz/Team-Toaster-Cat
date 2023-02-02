@@ -8,6 +8,7 @@ public class BlockPlacement : MonoBehaviour
     public int width;
     public int height;
     public float cellSize;
+    public Transform gridOrigin;
     public bool showDebugGrid;
     public int currentBlock;
     public int oldBlock = 0;
@@ -19,8 +20,9 @@ public class BlockPlacement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        worldGrid = new Grid(width, height, cellSize, new Vector3(0, 0, 0), showDebugGrid);
+        worldGrid = new Grid(width, height, cellSize, gridOrigin.position, showDebugGrid);
         ChangeCurrentBlock();
+        transparentBlockCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -73,7 +75,6 @@ public class BlockPlacement : MonoBehaviour
             ChangeCurrentBlock();
         }
 
-        transparentBlockCollider.enabled = true;
         Vector3 transPos = worldGrid.GetCellCenter(GetMouseWorldPos(),Mathf.FloorToInt(transparentBlockCollider.bounds.size.x));
         transPos.x += 0.5f;
         currentTransparentBlock.transform.position = transPos;
@@ -102,6 +103,7 @@ public class BlockPlacement : MonoBehaviour
 
     private bool CheckIfBoxCanBePlaced()
     {
+        transparentBlockCollider.enabled = true;
         var size = transparentBlockCollider.bounds.size;
         size.x -= 1f;
         size.y -= 0.5f;

@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4821228383090712570, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
       propertyPath: m_Name
-      value: SpeedPlatform
+      value: TransSpeedPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821228383090712570, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712571, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
       propertyPath: m_RootOrder
@@ -59,9 +63,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4821228383108911044, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4821228384292023327, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821228384292023327, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}

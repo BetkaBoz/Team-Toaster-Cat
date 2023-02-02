@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2716916872144267575, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712569, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_Color.a
       value: 0.2509804
@@ -14,6 +18,10 @@ PrefabInstance:
     - target: {fileID: 4821228383090712570, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_Name
       value: TransPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821228383090712570, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712571, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +66,10 @@ PrefabInstance:
     - target: {fileID: 4821228383090712571, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821228384292023327, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
