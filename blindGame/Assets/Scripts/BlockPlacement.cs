@@ -95,8 +95,7 @@ public class BlockPlacement : MonoBehaviour
                 {
                     score -= transparentBlocks[currentBlock].pointCost;
                 }
-                score -= transparentBlocks[currentBlock].pointCost;
-                transparentBlocks[currentBlock].count--;
+                transparentBlocks[currentBlock].decreaseAmount();
                 spawner.SpawnObject(currentBlock, currentTransparentBlock.transform.position, currentTransparentBlock.transform.rotation);
                 Debug.Log("Score: " + score);
             }

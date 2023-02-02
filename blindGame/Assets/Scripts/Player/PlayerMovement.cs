@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float defaultSpeed = 3.0f;
     private float jump = 15.0f;
     public float defaultJump = 15.0f;
+    public bool dead = false;
 
 
     [Header("Sounds")]
@@ -75,12 +76,14 @@ public class PlayerMovement : MonoBehaviour
             {
                     death.Play();
                     isGrounded = true;
+                    dead = true;
                     speed = 0;
                     break;
             }
             case "voidCollider":
                 {
                     falling.Play();
+                    dead = true;
                     break;
                 }
         }
