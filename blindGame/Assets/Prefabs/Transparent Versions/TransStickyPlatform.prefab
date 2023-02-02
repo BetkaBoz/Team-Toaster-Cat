@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 5596647618904193277, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
     - target: {fileID: 6281916008313398950, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_IsActive
       value: 0
