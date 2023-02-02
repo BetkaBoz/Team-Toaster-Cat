@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public PlayerMovement playerMovement; //hodnoty speed
+    public PlayerMovement playerI; 
 
     public Transform player; // suradnice hraca
     Vector3 velocity = Vector3.zero;
@@ -20,6 +20,7 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        if (playerI.dead) return;
         Vector3 targetPos = player.position + positionOffset;
         targetPos = new Vector3(Mathf.Clamp(targetPos.x, xlimit.x, xlimit.y), Mathf.Clamp(targetPos.y, ylimit.x, ylimit.y), -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);

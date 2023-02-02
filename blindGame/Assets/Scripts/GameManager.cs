@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text buttonText;
     public Button nextResetButton;
     public GameObject scoreBoard;
+    public bool isGameOver = false;
 
     public void SubstractScore(int amount)
     {
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(bool isDead)
     {
+        isGameOver = true;
         SaveObject saveObject = SaveManager.Load();
         switch (levelNumber)
         {

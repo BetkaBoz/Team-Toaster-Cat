@@ -29,7 +29,8 @@ public class BlockPlacement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if (gameManager.isGameOver) return;
         if (Input.anyKeyDown)
         {
             oldBlock = currentBlock;
