@@ -874,7 +874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507963434}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: grid_origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2768,11 +2768,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 531108032788360092, guid: c140baf0b6b8f04438829a7a922a7255, type: 3}
       propertyPath: width
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 531108032788360092, guid: c140baf0b6b8f04438829a7a922a7255, type: 3}
       propertyPath: height
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 531108032788360092, guid: c140baf0b6b8f04438829a7a922a7255, type: 3}
       propertyPath: spawner
