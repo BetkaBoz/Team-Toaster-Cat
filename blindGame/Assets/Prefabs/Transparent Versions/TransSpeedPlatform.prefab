@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4821228383090712568, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821228383090712569, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712570, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
       propertyPath: m_Name
       value: TransSpeedPlatform
@@ -72,6 +80,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821228384292023327, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767424996063614577, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767424996063614577, guid: 5c5640645b08279498cc0c0cefba145a, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}

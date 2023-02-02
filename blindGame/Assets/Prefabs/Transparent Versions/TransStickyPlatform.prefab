@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2803513494859335856, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2803513494859335857, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,6 +55,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2803513494859335859, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
     - target: {fileID: 2803513494859335862, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_Name
       value: TransStickyPlatform
@@ -72,6 +80,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2803513496329928707, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281916008313398950, guid: fe468332b704b3f44867a915c473111e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281916008313398950, guid: fe468332b704b3f44867a915c473111e, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}

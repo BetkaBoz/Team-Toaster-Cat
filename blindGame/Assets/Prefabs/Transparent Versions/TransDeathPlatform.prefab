@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8527868905492659032, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8527868905492659033, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -74,6 +78,10 @@ PrefabInstance:
     - target: {fileID: 8527868905492659034, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527868905492659039, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2509804
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aba3cc76c5b90da41ba11d15f1b1dc32, type: 3}

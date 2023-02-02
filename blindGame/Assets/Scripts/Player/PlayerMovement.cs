@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player")]
+    public GameObject PlayerOb;
     public Rigidbody2D rgPlayer;
     public bool isGrounded = true;
     private float speed = 3.0f;
@@ -78,12 +79,17 @@ public class PlayerMovement : MonoBehaviour
                     isGrounded = true;
                     dead = true;
                     speed = 0;
+                    jump = 0;
+                    PlayerOb.GetComponent<CapsuleCollider2D>().enabled = false;
                     break;
             }
             case "voidCollider":
                 {
                     falling.Play();
                     dead = true;
+                    speed = 0;
+                    jump = 0;
+                    rgPlayer.gravityScale = 0;
                     break;
                 }
         }

@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 325394106601643836, guid: 54c180de504d25e449d7b853927bd028, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
     - target: {fileID: 325394106601643838, guid: 54c180de504d25e449d7b853927bd028, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -67,11 +71,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 325394106601643839, guid: 54c180de504d25e449d7b853927bd028, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 325394107384860641, guid: 54c180de504d25e449d7b853927bd028, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325394107384860641, guid: 54c180de504d25e449d7b853927bd028, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984691931849286011, guid: 54c180de504d25e449d7b853927bd028, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984691931849286011, guid: 54c180de504d25e449d7b853927bd028, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
