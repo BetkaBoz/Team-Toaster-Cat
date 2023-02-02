@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             {
                     jumpType = false; ;
                     isGrounded = true;
-                    jump = jump * 1.9f;
+                    jump = jump * 1.7f;
                     break;
             }
             case "deathCollider":

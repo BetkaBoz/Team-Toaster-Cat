@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadVar()
     {
-        SaveManager.Load();
+        so = SaveManager.Load();
         text1.text = "" + so.highScore1;
         text2.text = "" + so.highScore2;
         text3.text = "" + so.highScore3;

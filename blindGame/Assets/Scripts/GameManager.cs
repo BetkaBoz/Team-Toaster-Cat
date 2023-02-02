@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Button nextResetButton;
     public GameObject scoreBoard;
     public bool isGameOver = false;
+    public SaveObject so;
 
     public void SubstractScore(int amount)
     {
@@ -32,41 +33,42 @@ public class GameManager : MonoBehaviour
     public void GameOver(bool isDead)
     {
         isGameOver = true;
-        SaveObject saveObject = SaveManager.Load();
+        so = SaveManager.Load();
         switch (levelNumber)
         {
             case 1:
-                if (score > saveObject.highScore1)
+                if (score > so.highScore1)
                 {
-                    saveObject.highScore1 = score;
+                    so.highScore1 = score; SaveManager.Save(so);
                 }
                 break;
             case 2:
-                if (score > saveObject.highScore2)
+                if (score > so.highScore2)
                 {
-                    saveObject.highScore2 = score;
+                    so.highScore1 = score; SaveManager.Save(so);
                 }
                 break;
             case 3:
-                if (score > saveObject.highScore3)
+                if (score > so.highScore3)
                 {
-                    saveObject.highScore3 = score;
+                    so.highScore3 = score; SaveManager.Save(so);
                 }
                 break;
             case 4:
-                if (score > saveObject.highScore4)
+                if (score > so.highScore4)
                 {
-                    saveObject.highScore4 = score;
+                    so.highScore1 = score; SaveManager.Save(so);
                 }
                 break;
             case 5:
-                if (score > saveObject.highScore5)
+                if (score > so.highScore5)
                 {
-                    saveObject.highScore5 = score;
+                    so.highScore5 = score;
+                    SaveManager.Save(so);
                 }
                 break;
         }
-        SaveManager.Save(saveObject);
+        SaveManager.Save(so);
         scoreBoard.SetActive(true);
         if (isDead)
         {
@@ -86,17 +88,22 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        SaveManager.Save(so);
         SceneManager.LoadScene("Level" + (levelNumber+1));
     }
 
     public void RestartLevel()
     {
+        SaveManager.Save(so);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
     public void GotoMenu()
     {
+        SaveManager.Save(so);
         SceneManager.LoadScene("Menu");
+        
 
     }
 }
