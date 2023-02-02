@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2803513494859335857}
   - component: {fileID: 2803513494859335859}
   - component: {fileID: 2803513494859335856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickyPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

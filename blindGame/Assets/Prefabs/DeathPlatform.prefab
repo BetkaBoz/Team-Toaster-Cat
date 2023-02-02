@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8527868905492659033}
   - component: {fileID: 8527868905492659039}
   - component: {fileID: 8527868905492659032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

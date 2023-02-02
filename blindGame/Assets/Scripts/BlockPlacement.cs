@@ -10,17 +10,17 @@ public class BlockPlacement : MonoBehaviour
     public float cellSize;
     public bool showDebugGrid;
     public int currentBlock;
+    public int oldBlock = 0;
     public List<GameObject> transparentBlocks;
     public GameObject currentTransparentBlock;
     public BoxCollider2D transparentBlockCollider;
+    public BlockSpawner spawner;
 
     // Start is called before the first frame update
     void Start()
     {
         worldGrid = new Grid(width, height, cellSize, new Vector3(0, 0, 0), showDebugGrid);
-        transparentBlocks[currentBlock].SetActive(true);
-        currentTransparentBlock = transparentBlocks[currentBlock];
-        transparentBlockCollider = currentTransparentBlock.GetComponent<BoxCollider2D>();
+        ChangeCurrentBlock();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class BlockPlacement : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            transparentBlocks[currentBlock].SetActive(false);
+            oldBlock = currentBlock;
             if (Input.GetKeyDown(KeyCode.Alpha1))
                 currentBlock = 0;
             if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -39,14 +39,15 @@ public class BlockPlacement : MonoBehaviour
                 currentBlock = 3;
             if (Input.GetKeyDown(KeyCode.Alpha5))
                 currentBlock = 4;
-            transparentBlocks[currentBlock].SetActive(true);
-            currentTransparentBlock = transparentBlocks[currentBlock];
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+                currentBlock = 5;
+            ChangeCurrentBlock();
         }
             
 
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
-            transparentBlocks[currentBlock].SetActive(false);
+            oldBlock = currentBlock;
             if (currentBlock >= transparentBlocks.Count - 1)
             {
                 currentBlock = 0;
@@ -55,13 +56,12 @@ public class BlockPlacement : MonoBehaviour
             {
                 currentBlock++;
             }
-            transparentBlocks[currentBlock].SetActive(true);
-            currentTransparentBlock = transparentBlocks[currentBlock];
+            ChangeCurrentBlock();
         }
 
         if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
         {
-            transparentBlocks[currentBlock].SetActive(false);
+            oldBlock = currentBlock;
             if (currentBlock <= 0)
             {
                 currentBlock = transparentBlocks.Count - 1;
@@ -70,8 +70,7 @@ public class BlockPlacement : MonoBehaviour
             {
                 currentBlock--;
             }
-            transparentBlocks[currentBlock].SetActive(true);
-            currentTransparentBlock = transparentBlocks[currentBlock];
+            ChangeCurrentBlock();
         }
 
         transparentBlockCollider.enabled = true;
@@ -83,12 +82,22 @@ public class BlockPlacement : MonoBehaviour
             if (CheckIfBoxCanBePlaced())
             {
                 Debug.Log("poop");
+                spawner.SpawnObject(currentBlock, currentTransparentBlock.transform.position, currentTransparentBlock.transform.rotation);
             }
         }
         if (Input.GetMouseButtonDown(1))
         {
             worldGrid.SetValue(GetMouseWorldPos(), 1);
         }
+    }
+
+    private void ChangeCurrentBlock()
+    {
+        transparentBlocks[oldBlock].SetActive(false);
+        transparentBlocks[currentBlock].SetActive(true);
+        currentTransparentBlock = transparentBlocks[currentBlock];
+        transparentBlockCollider = currentTransparentBlock.GetComponent<BoxCollider2D>();
+        Debug.Log("Boop");
     }
 
     private bool CheckIfBoxCanBePlaced()
@@ -105,15 +114,15 @@ public class BlockPlacement : MonoBehaviour
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics2D.Raycast(ray.origin, ray.direction))
+        if (Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity,LayerMask.GetMask("Platform")))
         {
             Debug.Log("Raycast gotya!");
             return false;
         }
 
         //this is stupid but for some reason I need to shrink the x otherwise it 
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(currentTransparentBlock.transform.position, size, 0f, new Vector2(0, 0));
-        if(hits.Length > 0)
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(currentTransparentBlock.transform.position, size, 0f, new Vector2(0, 0), Mathf.Infinity, LayerMask.GetMask("Platform"));//, LayerMask.NameToLayer("Platform")
+        if (hits.Length > 0)
         {
             Debug.Log("Colliders gotya!");
             return false;
