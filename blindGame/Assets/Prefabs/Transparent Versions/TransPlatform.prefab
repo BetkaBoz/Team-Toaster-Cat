@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4821228383090712568, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712569, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_Color.a
       value: 0.2509804
@@ -29,15 +33,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712571, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.496937
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712571, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.36231136
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712571, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -0.38242257
       objectReference: {fileID: 0}
     - target: {fileID: 4821228383090712571, guid: b5f0a668c55b8a2488a9a69b7781077e, type: 3}
       propertyPath: m_LocalRotation.w

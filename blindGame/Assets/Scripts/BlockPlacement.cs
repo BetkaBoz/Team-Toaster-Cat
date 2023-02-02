@@ -12,10 +12,12 @@ public class BlockPlacement : MonoBehaviour
     public bool showDebugGrid;
     public int currentBlock;
     public int oldBlock = 0;
-    public List<GameObject> transparentBlocks;
+    public List<TransparentObject> transparentBlocks;
     public GameObject currentTransparentBlock;
     public BoxCollider2D transparentBlockCollider;
     public BlockSpawner spawner;
+    public Transform playerPos = null;
+    public int score = 10000;
 
     // Start is called before the first frame update
     void Start()
@@ -75,15 +77,28 @@ public class BlockPlacement : MonoBehaviour
             ChangeCurrentBlock();
         }
 
-        Vector3 transPos = worldGrid.GetCellCenter(GetMouseWorldPos(),Mathf.FloorToInt(transparentBlockCollider.bounds.size.x));
+        Vector3 transPos = worldGrid.GetCellCenter(GetMouseWorldPos(),transparentBlocks[currentBlock].size);
         transPos.x += 0.5f;
         currentTransparentBlock.transform.position = transPos;
         if (Input.GetMouseButtonDown(0))
         {
             if (CheckIfBoxCanBePlaced())
             {
-                Debug.Log("poop");
+                Debug.Log("Block: " + currentBlock + " count: " + transparentBlocks[currentBlock].count);
+                if (transparentBlocks[currentBlock].count <= 0) return;
+                worldGrid.SetValue(GetMouseWorldPos(), 1);
+                if (score - transparentBlocks[currentBlock].pointCost <= 0)
+                {
+                    score = 0;
+                }
+                else
+                {
+                    score -= transparentBlocks[currentBlock].pointCost;
+                }
+                score -= transparentBlocks[currentBlock].pointCost;
+                transparentBlocks[currentBlock].count--;
                 spawner.SpawnObject(currentBlock, currentTransparentBlock.transform.position, currentTransparentBlock.transform.rotation);
+                Debug.Log("Score: " + score);
             }
         }
         if (Input.GetMouseButtonDown(1))
@@ -94,11 +109,10 @@ public class BlockPlacement : MonoBehaviour
 
     private void ChangeCurrentBlock()
     {
-        transparentBlocks[oldBlock].SetActive(false);
-        transparentBlocks[currentBlock].SetActive(true);
-        currentTransparentBlock = transparentBlocks[currentBlock];
+        transparentBlocks[oldBlock].block.SetActive(false);
+        transparentBlocks[currentBlock].block.SetActive(true);
+        currentTransparentBlock = transparentBlocks[currentBlock].block;
         transparentBlockCollider = currentTransparentBlock.GetComponent<BoxCollider2D>();
-        Debug.Log("Boop");
     }
 
     private bool CheckIfBoxCanBePlaced()
@@ -108,6 +122,12 @@ public class BlockPlacement : MonoBehaviour
         size.x -= 1f;
         size.y -= 0.5f;
         transparentBlockCollider.enabled = false;
+
+        if(((gridOrigin.position.x + 1f) >= worldGrid.GetCellCenter(GetMouseWorldPos(), 1).x) && (playerPos != null))
+        {
+            Debug.Log("Player gotya!");
+            return false;
+        }
 
         if (worldGrid.GetValue(GetMouseWorldPos()) != 0)
         {
